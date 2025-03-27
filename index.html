@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book library</title>
+    <link href="./style.css" rel="stylesheet">
+    <link href="./toggle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="search-view">
+                <div class="search-container"><input id="search" type="text"
+                        placeholder="search by title or author name" /><svg id="searchBtn"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg></div>
+            </div>
+            <div class="sort-view">
+                <div class="sort-container"><span>Short by title</span><select id="title-sort">
+                        <option value="" selected disabled>Sort by Title</option>
+                        <option value="a-z">a-z</option>
+                        <option value="z-a">z-a</option>
+                    </select></div>
+                <div class="sort-container" id="publication-sort"><span>Short by publication date</span><select>
+                        <option value="a-z" selected disabled>sort by date</option>
+                        <option value="a-z">Old to New</option>
+                        <option value="z-a">New to Old</option>
+                    </select></div>
+
+                <div id="toggle-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M128 136c0-22.1-17.9-40-40-40L40 96C17.9 96 0 113.9 0 136l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48zm0 192c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48zm32-192l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zM288 328c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48zm32-192l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zM448 328c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48z" />
+                    </svg>
+
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-book-card" />
+                        <span class="slider"></span>
+                    </label>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="book-list" id="book-container">
+
+            <div id="book-card" class="book-card book-card-grid ">
+                <div class="book-image-container "><img id="card-image" class="book-image book-image-grid"
+                        src="http://books.google.com/books/content?id=KA9QDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api">
+                </div>
+                <div class="book-card-body ">
+                    <p class="book-card-published">2006-04-04</p>
+                    <p class="book-card-author">Venkat Subramaniam,
+                        Andy Hunt</p>
+                    <p class="book-card-title">Practices of an Agile Developer</p>
+
+
+                    <p class="book-card-description">These are the proven, effective agile practices that will make
+                        you
+                        a better developer. You'll learn pragmatic ways of
+                        approaching the development process and your personal coding techniques. You'll learn about
+                        your
+                        own attitudes, issues
+                        with working on a team, and how to best manage your learning, all in an iterative,
+                        incremental,
+                        agile style. You'll see
+                        how to apply each practice, and what benefits you can expect. Bottom line: This book will
+                        make
+                        you a better developer.</p>
+
+                </div>
+            </div>
+            <div class="book-card book-card-grid ">
+                <div class="book-image-container "><img class="book-image book-image-grid"
+                        src="http://books.google.com/books/content?id=KA9QDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api">
+                </div>
+                <div class="book-card-body ">
+                    <p class="book-card-published">2006-04-04</p>
+                    <p class="book-card-author">Venkat Subramaniam,
+                        Andy Hunt</p>
+                    <p class="book-card-title">Practices of an Agile Developer</p>
+
+
+                    <p class="book-card-description">These are the proven, effective agile practices that will make
+                        you
+                        a better developer. You'll learn pragmatic ways of
+                        approaching the development process and your personal coding techniques. You'll learn about
+                        your
+                        own attitudes, issues
+                        with working on a team, and how to best manage your learning, all in an iterative,
+                        incremental,
+                        agile style. You'll see
+                        how to apply each practice, and what benefits you can expect. Bottom line: This book will
+                        make
+                        you a better developer.</p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-navigation">
+            <button id="previous">previous : 0 </button>
+            <div id="current-page">Current page : 1</div>
+            <button id="next">next : 2</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

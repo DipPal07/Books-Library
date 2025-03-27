@@ -1,0 +1,115 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Book Image */
+.detail-page-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #e0e0e0;
+  padding: 20px;
+}
+
+#book-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Book Details */
+.detail-page-body {
+  padding: 20px;
+}
+
+#publication-date {
+  font-size: 14px;
+  color: #666;
+}
+
+#author {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+#detail-page-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+#description {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .detail-page-image {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .detail-page-body {
+    width: 60%;
+  }
+
+  #book-image {
+    max-width: 200px;
+  }
+}
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 5px;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgb(27, 255, 114);
+  transition: all 0.3s;
+}
+button:active {
+  background-color: rgb(12, 128, 1);
+}
