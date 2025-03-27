@@ -157,6 +157,7 @@ function fetchBooks(page = 1) {
       libraryData = data.data.data;
       totalPages = parseInt(data.data.totalPages);
       createBookCards(libraryData);
+      window.localStorage.setItem("books", JSON.stringify(libraryData));
     })
     .catch((e) => {
       console.log(e);
