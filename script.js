@@ -104,8 +104,12 @@ cardType.addEventListener("input", function (e) {
 });
 
 function createBookCards(books) {
-  const cardType =
-    window.localStorage.getItem("cardType") === "grid" ? "grid" : "list";
+  let cardType = window.localStorage.getItem("cardType");
+  if (!cardType) {
+    cardType = "grid";
+  } else {
+    cardType = cardType === "grid" ? "grid" : "list";
+  }
   const container = document.getElementById("book-container");
   container.innerHTML = "";
 
@@ -153,7 +157,6 @@ function fetchBooks(page = 1) {
       libraryData = data.data.data;
       totalPages = parseInt(data.data.totalPages);
       createBookCards(libraryData);
-      window.localStorage.setItem("books", JSON.stringify(libraryData));
     })
     .catch((e) => {
       console.log(e);
